@@ -9,7 +9,7 @@ resource "massdriver_artifact" "azure_storage_account_blob" {
           ari      = module.azure_storage_account.account_id
           endpoint = module.azure_storage_account.primary_blob_endpoint
           connection_str  = module.azure_storage_account.primary_connection_string
-          queue_connection_str = azurerm_servicebus_namespace_authorization_rule.main.primary_connection_string
+          queue_connection_str = var.queue ? azurerm_servicebus_namespace_authorization_rule.main[0].primary_connection_string : null
         }
         security = {
           iam = {

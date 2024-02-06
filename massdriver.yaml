@@ -108,6 +108,12 @@ params:
     - redundancy
     - monitoring
   properties:
+    queue:
+      title: Enable Event Queue
+      description: Enable the event queue for the storage account. **Cannot be changed after deployment**.
+      type: boolean
+      default: false
+      $md.immutable: true
     account:
       title: Storage Account settings
       type: object
@@ -239,12 +245,9 @@ params:
 connections:
   required:
     - azure_service_principal
-    - azure_service_bus_queue
   properties:
     azure_service_principal:
       $ref: massdriver/azure-service-principal
-    azure_service_bus_queue:
-      $ref: massdriver/azure-service-bus-queue
 
 artifacts:
   required:
