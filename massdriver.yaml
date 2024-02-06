@@ -1,5 +1,5 @@
 schema: draft-07
-name: "azure-storage-account-application-assets"
+name: "azure-blob-storage"
 description: "Azure Blob storage is optimized for storing unstructured data. This storage solution is ideal for storing any files produced and consumed by your application internally."
 source_url: github.com/massdriver-cloud/azure-storage-account-application-assets
 access: public
@@ -239,9 +239,12 @@ params:
 connections:
   required:
     - azure_service_principal
+    - azure_service_bus_queue
   properties:
     azure_service_principal:
       $ref: massdriver/azure-service-principal
+    azure_service_bus_queue:
+      $ref: massdriver/azure-service-bus-queue
 
 artifacts:
   required:
