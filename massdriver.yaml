@@ -1,5 +1,5 @@
 schema: draft-07
-name: "azure-blob-storage"
+name: "azure-blob-storage-with-grid"
 description: "Azure Blob storage is optimized for storing unstructured data. This storage solution is ideal for storing any files produced and consumed by your application internally."
 source_url: github.com/massdriver-cloud/azure-storage-account-application-assets
 access: public
